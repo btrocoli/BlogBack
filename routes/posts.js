@@ -28,6 +28,7 @@ router.get('/:idArticulo', (req, res) => {
     });
 });
 
+// Funciona la actualización del objeto usando Postman
 router.put('/:idArticulo', (req, res) => {
     Post.findByIdAndUpdate(req.body.idArticulo, req.body, { new: true }, (err, post) => {
         res.json(post);
