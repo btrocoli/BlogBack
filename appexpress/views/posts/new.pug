@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+    h2 Crear nuevo Post
+    form(method="POST", action="/posts/create")
+        .form-group
+            label Título
+            input.form-control(type="text", name="titulo", placeholder="Título del post")
+        .form-group
+            label Usuario
+            input.form-control(type="text", name="usuario", placeholder="Nombre de usuario")
+        .form-group
+            label Fecha
+            input.form-control(type="text", name="fecha", placeholder="Fecha del post")
+        .form-group
+            label Categoría
+            select.form-control(name="categoria")
+                option(value="categoria1") Categoría 1
+                option(value="categoria2") Categoría 2
+                option(value="categoria3") Categoría 3
+                option(value="categoria4") Categoría 4
+                option(value="categoria5") Categoría 5
+        .form-group
+            label Mensaje
+            input.form-control(type="text", name="mensaje")
+        input.btn.btn-primary.float-right(type="submit", value="Enviar")

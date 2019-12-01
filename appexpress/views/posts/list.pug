@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+    h2 Lista de Posts
+    table.table
+        thead
+            tr
+                th Título
+                th Usuario
+                th Fecha
+                th Categoría 
+                th Mensaje
+                th Acciones
+        tbody
+            each art in arrArticulos
+                tr
+                    td= art.titulo
+                    td= art.usuario
+                    td= art.fecha
+                    td= art.categoria
+                    td= art.mensaje
+                    td
+                        a.btn.btn-primary(href="/posts/"+art.id) Ver
+                        a.btn.btn-success(href="/posts/edit/"+art.id) Edit
+                        a.btn.btn-danger(href="/posts/delete/"+art.id) Borrar

@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+    h2 Editar Post
+    form(method="POST", action="/posts/update")
+        .form-group
+            label Título
+            input.form-control(type="text", name="titulo", placeholder="Título del post", value=art.titulo)
+        .form-group
+            label Usuario
+            input.form-control(type="text", name="usuario", placeholder="Nombre de usuario", value=art.usuario)
+        .form-group
+            label Fecha
+            input.form-control(type="text", name="fecha", placeholder="Fecha del post", value=art.fecha)
+        .form-group
+            label Categoría
+            select.form-control(name="categoria", value=art.categoria)
+                option(value="categoria1") Categoría 1
+                option(value="categoria2") Categoría 2
+                option(value="categoria3") Categoría 3
+                option(value="categoria4") Categoría 4
+                option(value="categoria5") Categoría 5
+        .form-group
+            label Mensaje
+            input.form-control(type="text", name="mensaje", value=art.mensaje)
+        input(type="hidden", name="idArticulo", value=art.id)
+        input.btn.btn-primary.float-right(type="submit", value="Enviar")
